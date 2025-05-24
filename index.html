@@ -7,9 +7,6 @@
   <title>Inazuma Eleven 3 - Campaña de Microfinanciación</title>
   <style>
     /* Variables CSS para colores accesibles */
-    :focus {
-            outline: 3px solid #ff5733;
-            outline-offset: 2px;
     :root {
       --amarillo1: #FDC921; /* Contraste con morado4, gris1 */
       --amarillo2: #FDD85D;
@@ -107,16 +104,7 @@
   display: block;
   border: none;
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
+
 
 
     nav.tabs {
@@ -263,7 +251,7 @@
         min-height: auto; /* Permite que el contenido determine la altura */
       }
     }
-    
+
   </style>
 </head>
 <body>
@@ -272,9 +260,9 @@
     <div class="logo">Inazuma Eleven 3</div>
   </header>
 
-  <main id="main-content" tabindex="-1">
+  <main>
     <section class="hero">
-  <div class="video" role="region" aria-label="Tráiler de Inazuma Eleven 3 y logo Hypernova games">
+  <div class="video">
   <iframe
     src="https://www.youtube.com/embed/irtrgbIntcE"
     title="Tráiler de Inazuma Eleven 3"
@@ -282,12 +270,8 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
     loading="lazy"
-    aria-describedby="video-description"
   ></iframe>
-  <p id="video-description" class="sr-only">
-    Video tráiler de Inazuma Eleven 3. A continuación, el logo de Hypernova games.
-  </p>
-  <img src="imagenes/IMG_0559.png" alt="Logo Hypernova games"/>
+  <img src="imagenes/IMG_0559.png" alt="Logo Hypernova Games" />
 </div>
 
   <div class="summary" style="text-align: center;">
