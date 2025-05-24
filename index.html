@@ -303,6 +303,7 @@
       <button class="tab-btn" data-tab="arte" role="tab" aria-controls="arte" id="tab-arte" aria-selected="false" tabindex="-1">Arte del juego</button>
       <button class="tab-btn" data-tab="musica" role="tab" aria-controls="musica" id="tab-musica" aria-selected="false" tabindex="-1">Música</button>
       <button class="tab-btn" data-tab="equipo" role="tab" aria-controls="equipo" id="tab-equipo" aria-selected="false" tabindex="-1">Equipo</button>
+      <button class="tab-btn" data-tab="comentarios" role="tab" aria-controls="comentarios" id="tab-comentarios" aria-selected="false" tabindex="-1">Comentarios</button>
     </nav>
 
     <section class="content">
@@ -422,6 +423,23 @@
           Yo-kai Watch, el Profesor Layton...
         </p>
       </div>
+      <div class="tab-section" id="comentarios" role="tabpanel" aria-labelledby="tab-comentarios" tabindex="0" hidden>
+        <h1>Comentarios</h1>
+        <form id="form-comentarios">
+    <label for="nombre">Nombre:</label><br />
+    <input type="text" id="nombre" name="nombre" required /><br />
+
+    <label for="comentario">Comentario:</label><br />
+    <textarea id="comentario" name="comentario" required></textarea><br />
+
+    <button type="submit">Enviar comentario</button>
+  </form>
+
+  <div id="lista-comentarios">
+    <!-- Aquí se mostrarán los comentarios -->
+  </div>
+</section>
+      </div>
     </section>
 
     <section class="campaign-wrapper" aria-labelledby="campaign-heading">
@@ -515,6 +533,20 @@
   </footer>
 
   <script>
+    const form = document.getElementById('form-comentarios');
+  const lista = document.getElementById('lista-comentarios');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nombre = form.nombre.value.trim();
+    const comentario = form.comentario.value.trim();
+    if(nombre && comentario){
+      const nuevoComentario = document.createElement('p');
+      nuevoComentario.textContent = `${nombre} dice: ${comentario}`;
+      lista.appendChild(nuevoComentario);
+      form.reset();
+    }
+  });
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabSections = document.querySelectorAll('.tab-section');
 
