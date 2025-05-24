@@ -66,22 +66,30 @@
       padding: 20px;
       background-color: var(--azul-claro);
       justify-content: center;
-      align-items: flex-start; /* Alineación para que el contenido no se estire innecesariamente */
+      align-items: stretch; /* Alineación para que el contenido no se estire innecesariamente */
     }
 
     .hero .video, .hero .summary {
-      background-color: white;
-      padding: 20px;
-      border: 2px dashed var(--morado4);
-      border-radius: 10px;
-      flex: 1 1 300px;
-      min-height: 250px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para mayor profundidad */
-    }
+  flex: 1 1 0;
+  background-color: white;
+  padding: 20px;
+  border: 2px dashed var(--morado4);
+  border-radius: 10px;
+  min-height: auto; /* para que se adapte */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;           /* Esto es importante para poder alinear el iframe */
+  flex-direction: column;  /* para que iframe se estire en vertical */
+}
+
 
     .hero .video iframe {
-      display: block; /* Elimina espacio extra debajo del iframe */
-    }
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  display: block;
+}
+
 
     nav.tabs {
       display: flex;
@@ -227,6 +235,7 @@
         min-height: auto; /* Permite que el contenido determine la altura */
       }
     }
+    
   </style>
 </head>
 <body>
@@ -238,7 +247,6 @@
   <main>
     <section class="hero">
   <div class="video" style="text-align: center;">
-    <h2 class="sr-only">Video de Presentación</h2>
     <iframe
       src="https://www.youtube.com/embed/irtrgbIntcE"
       title="Tráiler de Inazuma Eleven 3"
