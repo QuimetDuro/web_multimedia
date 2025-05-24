@@ -82,13 +82,29 @@
 }
 
 
-    .hero .video iframe {
-  flex-grow: 1;
+    .hero .video {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  background-color: white;
+  padding: 20px;
+  border: 2px dashed var(--morado4);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: auto;
+  align-items: stretch; /* Para que hijos tomen todo el ancho */
+}
+
+.hero .video iframe,
+.hero .video img {
+  flex: 1 1 50%; /* Cada uno toma la mitad del contenedor */
   width: 100%;
   border-radius: 10px;
-  border: none;
+  object-fit: cover; /* La imagen se recorta si es necesario para llenar el espacio */
   display: block;
+  border: none;
 }
+
 
 
     nav.tabs {
@@ -246,17 +262,18 @@
 
   <main>
     <section class="hero">
-  <div class="video" style="text-align: center;">
-    <iframe
-      src="https://www.youtube.com/embed/irtrgbIntcE"
-      title="Tráiler de Inazuma Eleven 3"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      loading="lazy"
-      style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem;"
-    ></iframe>
-  </div>
+  <div class="video">
+  <iframe
+    src="https://www.youtube.com/embed/irtrgbIntcE"
+    title="Tráiler de Inazuma Eleven 3"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+  <img src="imagenes/IMG_0740.png" alt="Imagen vertical" />
+</div>
+
   <div class="summary" style="text-align: center;">
     <img src="imagenes/imagen_principal.png" alt="Logotipo y personajes de Inazuma Eleven 3" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem;">
     <h1>Inazuma Eleven 3</h1>
