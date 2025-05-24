@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PáginaInazuma</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+        }
+
+        .hero .video {
+            flex: 2;
+            min-width: 300px;
+            height: 400px;
+            background-color: #ccc;
+            margin-right: 20px;
+        }
+
+        .hero .summary {
+            flex: 1;
+            min-width: 250px;
+            height: 400px;
+            background-color: #ddd;
+        }
+
+        nav.tabs {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        nav.tabs button {
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        nav.tabs button.active {
+            border-bottom: 3px solid #333;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .tab-section {
+            display: none;
+            height: 400px;
+            margin-bottom: 40px;
+            background-color: #eee;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">[Logo]</div>
+    </header>
+
+    <section class="hero">
+        <div class="video">[Video Placeholder]</div>
+        <div class="summary">[Resumen Placeholder]</div>
+    </section>
+
+    <nav class="tabs">
+        <button class="tab-btn active" data-tab="historia">Historia</button>
+        <button class="tab-btn" data-tab="descripcion">Descripción</button>
+        <button class="tab-btn" data-tab="gameplay">Gameplay</button>
+        <button class="tab-btn" data-tab="caracteristicas">Características</button>
+        <button class="tab-btn" data-tab="personajes">Personajes</button>
+        <button class="tab-btn" data-tab="arte">Arte del juego</button>
+        <button class="tab-btn" data-tab="musica">Música</button>
+        <button class="tab-btn" data-tab="equipo">Equipo</button>
+        
+    </nav>
+
+    <section class="content">
+        <div class="tab-section active" id="historia">
+            <h1>
+                Historia
+            </h1>
+            <p>
+                En esta tercera entrega de la saga, nos encontramos inmediatamente después de los hechos acontecidos en la anterior edición, 
+                nuestros protagonistas afrontan el mundial con muchas ganas de ganar y de disfrutar del fútbol de todo el mundo.
+            </p>
+            <p>
+                Para ello primero deben clasificarse a la fase final mediante la victoria en la clasificación asiática.
+                Donde se enfrentarán a equipos como Australia, Catar, Corea...
+            </p>
+            <p>
+                Después de la clasificación afrontarán una fase de grupos seguida de las semifinales y la final, 
+                donde jugarán contra selecciones de todo el mundo como Inglaterra, Italia, Argentina entre otras.
+            </p>
+           
+        </div>
+        <div class="tab-section" id="descripcion">
+            <h1>
+                Descripción
+            </h1>
+            <p>
+                Inazuma Eleven 3 es la tercera entrega de la saga Inazuma Eleven, un RPG deportivo enfocado en el fútbol, 
+                con elementos fantássticos que se diferencian de todo lo que se ha visto antes en este deporte.
+            </p>
+            <p>
+                Level-5 y Akihiro Hino regresan para traernos la continuación de las aventuras de Mark Evans y sus compañeros 
+                de equipo, que se preparan para jugar al fútbol contra equipos de todo el mundo representando a la selección japonesa.
+            </p>
+        </div>
+        <div class="tab-section" id="gameplay">[Gameplay]
+            <h1>
+                Gameplay
+            </h1>
+            <p>
+                El núcleo de gameplay son las partidos, plagados de técnicas especiales que añaden gran profundidad al fútbol 
+                y dan lugar a estrategias novedosas. Estos partidos funcionan como "combates", que pueden suceder en momentos 
+                clave de la historia o mientras recorres las distintas localizaciones controlando a Mark.
+            </p>
+            <p>
+                Supera las distintas fases del torneo y álzate con el título de campeón guiando a tus jugadores hacia la victoria.
+                ¡Entrena, descubre nuevas supertécnicas y sigue adelante!
+            </p>
+        </div>
+        <div class="tab-section" id="caracteristicas">
+            <h1>
+                Características
+            </h1>
+            <p>
+                Viaja tanto por Japón como por el archipiélago de Liocott explorando laa áreas de cada país clasificado al torneo 
+                Fútbol Frontier Internacional y juega en el gran estadio central contra las mejores selecciones del mundo.
+            </p>
+            <p>
+                Antes de jugar un partido importante entrena y juega pachangas contra los fans de tu equipo u otros equipos.
+                Estas pachangas son encuentros aleatorios y pueden tener distintas reglas. En esencia, son pequeños partidos 
+                de 4 versus 4 de corta duración (alrededor de 2 minutos como máximo).
+            </p>
+            <p>
+                Cuando sea el momento de jugar un partido importante la preparación es crucial, elige qué jugadores saldrán 
+                a jugar y cuáles se quedan en el banquillo. Coloca a cada jugador en la posición que creas ms conveniente y 
+                ¡adelante!.
+            </p>
+            <p>
+                Dentro de un partido, podrás mover a tus jugadores y pasar el balón de la forma que quieras usando el lápiz táctil. 
+                Cuando dos jugadores choquen o cuando alguien tire a puerta, sucederá un enfrentamiento: el tiempo se detendrá y 
+                deberás elegir que supertécnica usar acorde a la situación. Presentamos también las Supertácticas, jugadas especiales 
+                que realiza todo el equipo junto y pueden tener varios propósitos: defender o atacar.
+            </p>
+        </div>
+        <div class="tab-section" id="personajes">
+            <h1>
+                Personajes
+            </h1>
+            <p>
+                Durante el transcurso de la historia te enfrentarás contra los mejores selecciones del mundo, donde después de terminar 
+                la historia podrás fichar para que te acompañen en el equipo y poder manejarles. Jugadores excepcionales como 
+                los capitanes de selecciones como Edgar Partinus, Paolo Bianchi, Héctor Helio, entre otros. Los podrs reclutar mediante 
+                un sistema de fichaje en el que tendrás que batirle en una pachanga para que se una a tu equipo.
+            </p>
+            <p>
+                Además de esto, cuando estés jugando la historia podrás fichar a jugadores a loa que te enfrentes en las pachangas de 
+                todo el mundo, mediante el mapa de contactos o las máquinas expendedoras que se encuentran repartidas por el mundo.
+            </p>
+            <p>
+                En este juego podemos encontrar también a jugadores de las anteriores entregas y serán fichables también después de terminar 
+                la historia mediante las máquinas antes mencionadas.
+            </p>
+        </div>
+        <div class="tab-section" id="arte">
+            <h1>
+                Arte del juego
+            </h1>
+            <p>
+                Inazuma eleven 3 ofrece un apartado artístico vivo, llamativo a la vez que intenso y lleno de color, gracias a su constante 
+                uso de colores variados y contraste entre luces y sombras.
+            </p>
+            <p>
+                Tanto en la portada, en los diseños y en los mismos conceptos iniciales, se puede apreciar un dinamismo y encuadre que refleja 
+                la intensidad y acción con la que se vive el juego.
+            </p>
+            <p>
+                Además, el gameplay no se queda atrás; el diseño 3D del juego otorga al jugador mayor realismo, de modo que es él quien siente 
+                que está siendo partícipe de cada jugada y de cada golpe. La expresividad en las caras, los efectos visuales, sumados a los 
+                fondos elaborados, crean una experiencia placentera a la vez que frenética que se queda grabada en la mente durante cada partido.
+            </p>
+        </div>
+        <div class="tab-section" id="musica">
+            <h1>
+                Música
+            </h1>
+            <p>
+                El aclamado compositor de videojuegos Yasunori Mitsuda vuelve a deleitarnos con sus obras en esta nueva entrega de la saga. 
+                Mitsuda ha trabajado en la banda sonora de otros grandes proyectos, tales como "Chrono Trigger" (de Square), "Xenoblade Chronicles" 
+                (de Monolith Soft) y muchos más.
+            </p>
+            <p>
+                Estamos muy agradecidos de volver a trabajar con la persona que compuso la banda sonora de los anteriores juegos de 
+                Inazuma Eleven.
+            </p>
+        </div>
+        <div class="tab-section" id="equipo">
+            <h1>
+                Equipo
+            </h1>
+            <p>
+                Somos una pequeña empresa dedicada al diseño y desarrollo de videojuegos, fundada recientemente en Madrid, compuesta por 
+                seis integrantes y trabajando por cuenta propia en proyectos como este para ofrecer al mundo nuestra creatividad plasmada 
+                en diversión para todos.
+            </p>
+            <p>
+                Hypernova Games se compone de los siguentes integrantes con sus respectivos cargos: arte, visuales y diseños del juego, a mano 
+                de Lucas; Andrs y Raúl, encargados de la redacción y guión narrativo; Joaquim, programador principal del videojuego y página web; 
+                David, a cargo de la banda sonora, efectos de sonido  y música del tráiler; y Samuel, encargado de la imagen principal y marketing.
+            </p>
+            <p>
+                Nuestro pequeño equipo de desarrolloha trabajado junto a la maravillosa empresa "Level-5", empresa japonesa fundada por 
+                Akihiro Hino en 1998 y líder y directora de este proyecto.
+            </p>
+            <p>
+                Esta misma empresa es famosa por desarrollar juegos como la propia saga de inazuma eleven adems de otras fabulosas sagas como 
+                yo-kai Watch, el profesor Layton...
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        [Pie de página]
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabSections = document.querySelectorAll('.tab-section');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Quitar clases activas
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabSections.forEach(sec => sec.classList.remove('active'));
+
+                // Activar botón y sección correspondiente
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
