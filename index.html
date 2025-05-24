@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Exo+2&display=swap" rel="stylesheet">
-  <title>Página Inazuma</title>
+  <title>Inazuma Eleven 3 - Campaña de Microfinanciación</title>
   <style>
+    /* Variables CSS para colores accesibles */
     :root {
-  --amarillo1: #FDC921;
-  --amarillo2: #FDD85D;
-  --amarillo3: #FFFDF7;
-  --azul1: #990DEA;
-  --azul2: #6788C0;
+      --amarillo1: #FDC921; /* Contraste con morado4, gris1 */
+      --amarillo2: #FDD85D;
+      --amarillo3: #FFFDF7;
 
-  --rojo1: #62040A;
-  --rojo2: #9D0610;
-  --rojo3: #D90618;
-  --rojo4: #F72634;
-  --rojo5: #F6828C;
+      --azul1: #990DEA; /* Contraste con blanco */
+      --azul2: #6788C0; /* Contraste con blanco */
+      --azul-claro: #E0F2F7; /* Fondo ligero */
+      --azul-oscuro: #004080; /* Para texto sobre fondos claros */
 
-  --morado1: #BD4EF9;
-  --morado2: #A713F6;
-  --morado3: #8207C5;
-  --morado4: #58058A;
+      --rojo1: #62040A;
+      --rojo2: #9D0610;
+      --rojo3: #D90618;
+      --rojo4: #F72634;
+      --rojo5: #F6828C;
 
-  --gris1: #35034F;
-}
+      --morado1: #BD4EF9;
+      --morado2: #A713F6; /* Contraste con blanco */
+      --morado3: #8207C5;
+      --morado4: #58058A; /* Contraste con amarillo1, blanco */
 
+      --gris1: #35034F; /* Contraste con amarillo1, blanco */
+      --gris-claro: #F8F8F8; /* Fondo general, contraste con texto oscuro */
+    }
 
     body {
-  margin: 0;
-  font-family: 'Exo 2', sans-serif;
-  background-color: var(--gris-claro);
-  color: #111;
-  line-height: 1.6;
-}
+      margin: 0;
+      font-family: 'Exo 2', sans-serif;
+      background-color: var(--gris-claro);
+      color: #111; /* Color de texto oscuro para buen contraste */
+      line-height: 1.6;
+    }
 
-.logo {
-  font-family: 'Bangers', cursive;
-}
+    .logo {
+      font-family: 'Bangers', cursive;
+    }
 
     header {
       background-color: var(--morado2);
@@ -48,10 +51,11 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sutil sombra para indicar interactividad */
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.8rem; /* Aumentado ligeramente para mejor legibilidad */
       font-weight: bold;
     }
 
@@ -62,6 +66,7 @@
       padding: 20px;
       background-color: var(--azul-claro);
       justify-content: center;
+      align-items: flex-start; /* Alineación para que el contenido no se estire innecesariamente */
     }
 
     .hero .video, .hero .summary {
@@ -71,6 +76,11 @@
       border-radius: 10px;
       flex: 1 1 300px;
       min-height: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para mayor profundidad */
+    }
+
+    .hero .video iframe {
+      display: block; /* Elimina espacio extra debajo del iframe */
     }
 
     nav.tabs {
@@ -78,7 +88,7 @@
       flex-wrap: wrap;
       justify-content: center;
       background-color: var(--amarillo1);
-  border-bottom: 3px solid var(--morado4);
+      border-bottom: 3px solid var(--morado4);
     }
 
     nav.tabs button {
@@ -86,21 +96,24 @@
       border: none;
       padding: 15px 20px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 1.1rem; /* Ligeramente más grande */
       font-weight: bold;
       color: var(--morado4);
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s, border-bottom 0.3s;
+      outline-offset: 2px; /* Mejora el focus visible */
     }
 
     nav.tabs button:hover,
     nav.tabs button:focus {
       background-color: var(--azul-claro);
-      outline: 2px solid var(--azul);
+      color: var(--azul-oscuro); /* Cambia el color del texto para mejor contraste */
+      outline: 2px solid var(--azul2); /* Contorno para accesibilidad de foco */
     }
 
     nav.tabs button.active {
-      border-bottom: 4px solid var(--azul);
+      border-bottom: 4px solid var(--azul2);
       background-color: white;
+      color: var(--morado4); /* Mantén el color original para el activo */
     }
 
     .content {
@@ -113,28 +126,84 @@
       padding: 20px;
       margin-bottom: 20px;
       background-color: var(--gris-claro);
-      border-left: 5px solid var(--azul);
+      border-left: 5px solid var(--azul2);
       border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .tab-section.active {
       display: block;
     }
 
-    h1 {
+    h1, h2, h3 {
       color: var(--morado4);
       font-size: 1.8rem;
       margin-bottom: 10px;
     }
 
     p {
-      margin-bottom: 10px;
+      margin-bottom: 15px; /* Más espacio entre párrafos */
+      line-height: 1.7; /* Mejor legibilidad */
+    }
+
+    ul {
+      list-style-type: disc; /* Asegura un estilo de lista por defecto */
+      margin-left: 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     footer {
       background-color: var(--morado4);
       color: white;
       padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Sección de campaña */
+    .campaign-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 30px;
+      background-color: var(--azul-claro);
+    }
+
+    .info-box, .objectives-box, .rewards-box {
+      border: 2px solid; /* El color del borde se define por cada caja */
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 280px; /* Ajuste para mejor responsividad */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .info-box {
+      border-color: var(--azul2);
+      background-color: #F0F8FF;
+    }
+
+    .objectives-box {
+      border-color: var(--rojo3); /* Un rojo más oscuro para el borde */
+      background-color: #FFE5E5;
+    }
+
+    .objectives-box h2 {
+      color: var(--rojo1); /* Rojo más oscuro para el título */
+      text-align: center;
+    }
+
+    .rewards-box {
+      border-color: var(--amarillo1);
+      background-color: #FFFBEA;
+    }
+
+    .rewards-box h2 {
+      color: var(--amarillo1);
       text-align: center;
     }
 
@@ -149,279 +218,269 @@
       }
 
       nav.tabs button {
-        border-bottom: 1px solid var(--azul);
+        border-bottom: 1px solid var(--azul2);
         width: 100%;
         text-align: left;
+      }
+
+      .hero .video, .hero .summary {
+        min-height: auto; /* Permite que el contenido determine la altura */
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header role="banner">
     <div class="logo">Inazuma Eleven 3</div>
   </header>
 
-  <section class="hero">
-  <div class="video">
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/irtrgbIntcE"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-  <div class="summary" style="text-align: center;">
-    <img src="imagenes/imagen_principal.png" alt="Imagen del proyecto" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem;">
-    <h1>Inazuma Eleven 3</h1>
-    <h2>El juego definitivo para jugar solo o con amigos</h2>
-     <p>
-                Inazuma Eleven 3 es la tercera entrega de la saga Inazuma Eleven, un RPG deportivo enfocado en el fútbol, 
-                con elementos fantássticos que se diferencian de todo lo que se ha visto antes en este deporte.
-            </p>
-            <p>
-                Level-5 y Akihiro Hino regresan para traernos la continuación de las aventuras de Mark Evans y sus compañeros 
-                de equipo, que se preparan para jugar al fútbol contra equipos de todo el mundo representando a la selección japonesa.
-            </p>
-    <p><strong>Autores:</strong> Lucas, Andrés, Raúl, Joaquim, David, Samuel</p>
-    <p style="font-size: 0.9rem; color: gray;">
-      ATENCIÓN: Esta página simula la campaña de microfinanciación de un videojuego ficticio y no representa un producto real. Práctica de Multimedia, 
-      1º GDDV- Curso 24/25 (Móstoles/Quintana), URJC. La URJC no se hace responsable del contenido expuesto por el autor.
-    </p>
-  </div>
-</section>
-
-
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="historia">Historia</button>
-    <button class="tab-btn" data-tab="gameplay">Gameplay</button>
-    <button class="tab-btn" data-tab="caracteristicas">Características</button>
-    <button class="tab-btn" data-tab="personajes">Personajes</button>
-    <button class="tab-btn" data-tab="arte">Arte del juego</button>
-    <button class="tab-btn" data-tab="musica">Música</button>
-    <button class="tab-btn" data-tab="equipo">Equipo</button>
-  </nav>
-    <section class="content">
-        <div class="tab-section active" id="historia">
-            <h1>
-                Historia
-            </h1>
-            <p>
-                En esta tercera entrega de la saga, nos encontramos inmediatamente después de los hechos acontecidos en la anterior edición, 
-                nuestros protagonistas afrontan el mundial con muchas ganas de ganar y de disfrutar del fútbol de todo el mundo.
-            </p>
-            <p>
-                Para ello primero deben clasificarse a la fase final mediante la victoria en la clasificación asiática.
-                Donde se enfrentarán a equipos como Australia, Catar, Corea...
-            </p>
-            <p>
-                Después de la clasificación afrontarán una fase de grupos seguida de las semifinales y la final, 
-                donde jugarán contra selecciones de todo el mundo como Inglaterra, Italia, Argentina entre otras.
-            </p>
-           
-        </div>
-        <div class="tab-section" id="gameplay">[Gameplay]
-            <h1>
-                Gameplay
-            </h1>
-            <p>
-                El núcleo de gameplay son las partidos, plagados de técnicas especiales que añaden gran profundidad al fútbol 
-                y dan lugar a estrategias novedosas. Estos partidos funcionan como "combates", que pueden suceder en momentos 
-                clave de la historia o mientras recorres las distintas localizaciones controlando a Mark.
-            </p>
-            <p>
-                Supera las distintas fases del torneo y álzate con el título de campeón guiando a tus jugadores hacia la victoria.
-                ¡Entrena, descubre nuevas supertécnicas y sigue adelante!
-            </p>
-        </div>
-        <div class="tab-section" id="caracteristicas">
-            <h1>
-                Características
-            </h1>
-            <p>
-                Viaja tanto por Japón como por el archipiélago de Liocott explorando laa áreas de cada país clasificado al torneo 
-                Fútbol Frontier Internacional y juega en el gran estadio central contra las mejores selecciones del mundo.
-            </p>
-            <p>
-                Antes de jugar un partido importante entrena y juega pachangas contra los fans de tu equipo u otros equipos.
-                Estas pachangas son encuentros aleatorios y pueden tener distintas reglas. En esencia, son pequeños partidos 
-                de 4 versus 4 de corta duración (alrededor de 2 minutos como máximo).
-            </p>
-            <p>
-                Cuando sea el momento de jugar un partido importante la preparación es crucial, elige qué jugadores saldrán 
-                a jugar y cuáles se quedan en el banquillo. Coloca a cada jugador en la posición que creas ms conveniente y 
-                ¡adelante!.
-            </p>
-            <p>
-                Dentro de un partido, podrás mover a tus jugadores y pasar el balón de la forma que quieras usando el lápiz táctil. 
-                Cuando dos jugadores choquen o cuando alguien tire a puerta, sucederá un enfrentamiento: el tiempo se detendrá y 
-                deberás elegir que supertécnica usar acorde a la situación. Presentamos también las Supertácticas, jugadas especiales 
-                que realiza todo el equipo junto y pueden tener varios propósitos: defender o atacar.
-            </p>
-        </div>
-        <div class="tab-section" id="personajes">
-            <h1>
-                Personajes
-            </h1>
-            <p>
-                Durante el transcurso de la historia te enfrentarás contra los mejores selecciones del mundo, donde después de terminar 
-                la historia podrás fichar para que te acompañen en el equipo y poder manejarles. Jugadores excepcionales como 
-                los capitanes de selecciones como Edgar Partinus, Paolo Bianchi, Héctor Helio, entre otros. Los podrs reclutar mediante 
-                un sistema de fichaje en el que tendrás que batirle en una pachanga para que se una a tu equipo.
-            </p>
-            <p>
-                Además de esto, cuando estés jugando la historia podrás fichar a jugadores a loa que te enfrentes en las pachangas de 
-                todo el mundo, mediante el mapa de contactos o las máquinas expendedoras que se encuentran repartidas por el mundo.
-            </p>
-            <p>
-                En este juego podemos encontrar también a jugadores de las anteriores entregas y serán fichables también después de terminar 
-                la historia mediante las máquinas antes mencionadas.
-            </p>
-        </div>
-        <div class="tab-section" id="arte">
-            <h1>
-                Arte del juego
-            </h1>
-            <p>
-                Inazuma eleven 3 ofrece un apartado artístico vivo, llamativo a la vez que intenso y lleno de color, gracias a su constante 
-                uso de colores variados y contraste entre luces y sombras.
-            </p>
-            <p>
-                Tanto en la portada, en los diseños y en los mismos conceptos iniciales, se puede apreciar un dinamismo y encuadre que refleja 
-                la intensidad y acción con la que se vive el juego.
-            </p>
-            <p>
-                Además, el gameplay no se queda atrás; el diseño 3D del juego otorga al jugador mayor realismo, de modo que es él quien siente 
-                que está siendo partícipe de cada jugada y de cada golpe. La expresividad en las caras, los efectos visuales, sumados a los 
-                fondos elaborados, crean una experiencia placentera a la vez que frenética que se queda grabada en la mente durante cada partido.
-            </p>
-        </div>
-        <div class="tab-section" id="musica">
-            <h1>
-                Música
-            </h1>
-            <p>
-                El aclamado compositor de videojuegos Yasunori Mitsuda vuelve a deleitarnos con sus obras en esta nueva entrega de la saga. 
-                Mitsuda ha trabajado en la banda sonora de otros grandes proyectos, tales como "Chrono Trigger" (de Square), "Xenoblade Chronicles" 
-                (de Monolith Soft) y muchos más.
-            </p>
-            <p>
-                Estamos muy agradecidos de volver a trabajar con la persona que compuso la banda sonora de los anteriores juegos de 
-                Inazuma Eleven.
-            </p>
-        </div>
-        <div class="tab-section" id="equipo">
-            <h1>
-                Equipo
-            </h1>
-            <p>
-                Somos una pequeña empresa dedicada al diseño y desarrollo de videojuegos, fundada recientemente en Madrid, compuesta por 
-                seis integrantes y trabajando por cuenta propia en proyectos como este para ofrecer al mundo nuestra creatividad plasmada 
-                en diversión para todos.
-            </p>
-            <p>
-                Hypernova Games se compone de los siguentes integrantes con sus respectivos cargos: arte, visuales y diseños del juego, a mano 
-                de Lucas; Andrs y Raúl, encargados de la redacción y guión narrativo; Joaquim, programador principal del videojuego y página web; 
-                David, a cargo de la banda sonora, efectos de sonido  y música del tráiler; y Samuel, encargado de la imagen principal y marketing.
-            </p>
-            <p>
-                Nuestro pequeño equipo de desarrolloha trabajado junto a la maravillosa empresa "Level-5", empresa japonesa fundada por 
-                Akihiro Hino en 1998 y líder y directora de este proyecto.
-            </p>
-            <p>
-                Esta misma empresa es famosa por desarrollar juegos como la propia saga de inazuma eleven adems de otras fabulosas sagas como 
-                yo-kai Watch, el profesor Layton...
-            </p>
-        </div>
+  <main>
+    <section class="hero">
+      <div class="video">
+        <h2 class="sr-only">Video de Presentación</h2>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Tráiler de Inazuma Eleven 3" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"> </iframe>
+      </div>
+      <div class="summary" style="text-align: center;">
+        <img src="imagenes/imagen_principal.png" alt="Logotipo y personajes de Inazuma Eleven 3" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem;">
+        <h1>Inazuma Eleven 3</h1>
+        <h2>El juego definitivo para jugar solo o con amigos</h2>
+        <p>
+          Inazuma Eleven 3 es la tercera entrega de la saga Inazuma Eleven, un RPG deportivo enfocado en el fútbol,
+          con elementos fantásticos que se diferencian de todo lo que se ha visto antes en este deporte.
+        </p>
+        <p>
+          Level-5 y Akihiro Hino regresan para traernos la continuación de las aventuras de Mark Evans y sus compañeros
+          de equipo, que se preparan para jugar al fútbol contra equipos de todo el mundo representando a la selección japonesa.
+        </p>
+        <p><strong>Autores:</strong> Lucas, Andrés, Raúl, Joaquim, David, Samuel</p>
+        <p style="font-size: 0.9rem; color: gray;">
+          <small>ATENCIÓN: Esta página simula la campaña de microfinanciación de un videojuego ficticio y no representa un producto real. Práctica de Multimedia,
+          1º GDDV- Curso 24/25 (Móstoles/Quintana), URJC. La URJC no se hace responsable del contenido expuesto por el autor.</small>
+        </p>
+      </div>
     </section>
-  <section class="campaign-wrapper" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 30px; background-color: var(--azul-claro);">
 
-    <div class="info-box" style="flex: 1 1 300px; border: 2px solid #007BFF; padding: 20px; background-color: #F0F8FF; border-radius: 10px;">
-    <h2>Descripción de la campaña</h2>
-    <p>Este proyecto forma parte de una campaña educativa de Hypernova Games [...]</p>
+    <nav class="tabs" role="tablist" aria-label="Secciones del juego">
+      <button class="tab-btn active" data-tab="historia" role="tab" aria-controls="historia" id="tab-historia" aria-selected="true" tabindex="0">Historia</button>
+      <button class="tab-btn" data-tab="gameplay" role="tab" aria-controls="gameplay" id="tab-gameplay" aria-selected="false" tabindex="-1">Gameplay</button>
+      <button class="tab-btn" data-tab="caracteristicas" role="tab" aria-controls="caracteristicas" id="tab-caracteristicas" aria-selected="false" tabindex="-1">Características</button>
+      <button class="tab-btn" data-tab="personajes" role="tab" aria-controls="personajes" id="tab-personajes" aria-selected="false" tabindex="-1">Personajes</button>
+      <button class="tab-btn" data-tab="arte" role="tab" aria-controls="arte" id="tab-arte" aria-selected="false" tabindex="-1">Arte del juego</button>
+      <button class="tab-btn" data-tab="musica" role="tab" aria-controls="musica" id="tab-musica" aria-selected="false" tabindex="-1">Música</button>
+      <button class="tab-btn" data-tab="equipo" role="tab" aria-controls="equipo" id="tab-equipo" aria-selected="false" tabindex="-1">Equipo</button>
+    </nav>
 
-    <h2>Métodos de pago</h2>
-    <ul>
-      <li>Tarjeta de crédito</li>
-      <li>PayPal</li>
-      <li>Transferencia bancaria</li>
-    </ul>
+    <section class="content">
+      <div class="tab-section active" id="historia" role="tabpanel" aria-labelledby="tab-historia" tabindex="0">
+        <h1>Historia</h1>
+        <p>
+          En esta tercera entrega de la saga, nos encontramos inmediatamente después de los hechos acontecidos en la anterior edición,
+          nuestros protagonistas afrontan el mundial con muchas ganas de ganar y de disfrutar del fútbol de todo el mundo.
+        </p>
+        <p>
+          Para ello primero deben clasificarse a la fase final mediante la victoria en la clasificación asiática.
+          Donde se enfrentarán a equipos como Australia, Catar, Corea...
+        </p>
+        <p>
+          Después de la clasificación afrontarán una fase de grupos seguida de las semifinales y la final,
+          donde jugarán contra selecciones de todo el mundo como Inglaterra, Italia, Argentina entre otras.
+        </p>
+      </div>
+      <div class="tab-section" id="gameplay" role="tabpanel" aria-labelledby="tab-gameplay" tabindex="0" hidden>
+        <h1>Gameplay</h1>
+        <p>
+          El núcleo de gameplay son los partidos, plagados de técnicas especiales que añaden gran profundidad al fútbol
+          y dan lugar a estrategias novedosas. Estos partidos funcionan como "combates", que pueden suceder en momentos
+          clave de la historia o mientras recorres las distintas localizaciones controlando a Mark.
+        </p>
+        <p>
+          Supera las distintas fases del torneo y álzate con el título de campeón guiando a tus jugadores hacia la victoria.
+          ¡Entrena, descubre nuevas supertécnicas y sigue adelante!
+        </p>
+      </div>
+      <div class="tab-section" id="caracteristicas" role="tabpanel" aria-labelledby="tab-caracteristicas" tabindex="0" hidden>
+        <h1>Características</h1>
+        <p>
+          Viaja tanto por Japón como por el archipiélago de Liocott explorando las áreas de cada país clasificado al torneo
+          Fútbol Frontier Internacional y juega en el gran estadio central contra las mejores selecciones del mundo.
+        </p>
+        <p>
+          Antes de jugar un partido importante entrena y juega pachangas contra los fans de tu equipo u otros equipos.
+          Estas pachangas son encuentros aleatorios y pueden tener distintas reglas. En esencia, son pequeños partidos
+          de 4 versus 4 de corta duración (alrededor de 2 minutos como máximo).
+        </p>
+        <p>
+          Cuando sea el momento de jugar un partido importante la preparación es crucial, elige qué jugadores saldrán
+          a jugar y cuáles se quedan en el banquillo. Coloca a cada jugador en la posición que creas más conveniente y
+          ¡adelante!.
+        </p>
+        <p>
+          Dentro de un partido, podrás mover a tus jugadores y pasar el balón de la forma que quieras usando el lápiz táctil.
+          Cuando dos jugadores choquen o cuando alguien tire a puerta, sucederá un enfrentamiento: el tiempo se detendrá y
+          deberás elegir qué supertécnica usar acorde a la situación. Presentamos también las Supertácticas, jugadas especiales
+          que realiza todo el equipo junto y pueden tener varios propósitos: defender o atacar.
+        </p>
+      </div>
+      <div class="tab-section" id="personajes" role="tabpanel" aria-labelledby="tab-personajes" tabindex="0" hidden>
+        <h1>Personajes</h1>
+        <p>
+          Durante el transcurso de la historia te enfrentarás contra las mejores selecciones del mundo, donde después de terminar
+          la historia podrás fichar para que te acompañen en el equipo y poder manejarles. Jugadores excepcionales como
+          los capitanes de selecciones como Edgar Partinus, Paolo Bianchi, Héctor Helio, entre otros. Los podrás reclutar mediante
+          un sistema de fichaje en el que tendrás que batirle en una pachanga para que se una a tu equipo.
+        </p>
+        <p>
+          Además de esto, cuando estés jugando la historia podrás fichar a jugadores a los que te enfrentes en las pachangas de
+          todo el mundo, mediante el mapa de contactos o las máquinas expendedoras que se encuentran repartidas por el mundo.
+        </p>
+        <p>
+          En este juego podemos encontrar también a jugadores de las anteriores entregas y serán fichables también después de terminar
+          la historia mediante las máquinas antes mencionadas.
+        </p>
+      </div>
+      <div class="tab-section" id="arte" role="tabpanel" aria-labelledby="tab-arte" tabindex="0" hidden>
+        <h1>Arte del juego</h1>
+        <p>
+          Inazuma Eleven 3 ofrece un apartado artístico vivo, llamativo a la vez que intenso y lleno de color, gracias a su constante
+          uso de colores variados y contraste entre luces y sombras.
+        </p>
+        <p>
+          Tanto en la portada, en los diseños y en los mismos conceptos iniciales, se puede apreciar un dinamismo y encuadre que refleja
+          la intensidad y acción con la que se vive el juego.
+        </p>
+        <p>
+          Además, el gameplay no se queda atrás; el diseño 3D del juego otorga al jugador mayor realismo, de modo que es él quien siente
+          que está siendo partícipe de cada jugada y de cada golpe. La expresividad en las caras, los efectos visuales, sumados a los
+          fondos elaborados, crean una experiencia placentera a la vez que frenética que se queda grabada en la mente durante cada partido.
+        </p>
+      </div>
+      <div class="tab-section" id="musica" role="tabpanel" aria-labelledby="tab-musica" tabindex="0" hidden>
+        <h1>Música</h1>
+        <p>
+          El aclamado compositor de videojuegos Yasunori Mitsuda vuelve a deleitarnos con sus obras en esta nueva entrega de la saga.
+          Mitsuda ha trabajado en la banda sonora de otros grandes proyectos, tales como "Chrono Trigger" (de Square), "Xenoblade Chronicles"
+          (de Monolith Soft) y muchos más.
+        </p>
+        <p>
+          Estamos muy agradecidos de volver a trabajar con la persona que compuso la banda sonora de los anteriores juegos de
+          Inazuma Eleven.
+        </p>
+      </div>
+      <div class="tab-section" id="equipo" role="tabpanel" aria-labelledby="tab-equipo" tabindex="0" hidden>
+        <h1>Equipo</h1>
+        <p>
+          Somos una pequeña empresa dedicada al diseño y desarrollo de videojuegos, fundada recientemente en Madrid, compuesta por
+          seis integrantes y trabajando por cuenta propia en proyectos como este para ofrecer al mundo nuestra creatividad plasmada
+          en diversión para todos.
+        </p>
+        <p>
+          Hypernova Games se compone de los siguientes integrantes con sus respectivos cargos: arte, visuales y diseños del juego, a mano
+          de Lucas; Andrés y Raúl, encargados de la redacción y guion narrativo; Joaquim, programador principal del videojuego y página web;
+          David, a cargo de la banda sonora, efectos de sonido y música del tráiler; y Samuel, encargado de la imagen principal y marketing.
+        </p>
+        <p>
+          Nuestro pequeño equipo de desarrollo ha trabajado junto a la maravillosa empresa "Level-5", empresa japonesa fundada por
+          Akihiro Hino en 1998 y líder y directora de este proyecto.
+        </p>
+        <p>
+          Esta misma empresa es famosa por desarrollar juegos como la propia saga de Inazuma Eleven además de otras fabulosas sagas como
+          Yo-kai Watch, el Profesor Layton...
+        </p>
+      </div>
+    </section>
 
-    <h2>Guía para contribuir</h2>
-    <p>
-      
-    </p>
-  </div>
+    <section class="campaign-wrapper" aria-labelledby="campaign-heading">
+      <h2 id="campaign-heading" class="sr-only">Información de la Campaña de Microfinanciación</h2> <div class="info-box">
+        <h2>Descripción de la campaña</h2>
+        <p>Este proyecto forma parte de una campaña educativa de Hypernova Games, simulando el proceso de microfinanciación de un videojuego. La finalidad es aprender sobre desarrollo web y diseño de videojuegos.</p>
 
-    <div class="objectives-box" style="flex: 1 1 250px; border: 2px dashed red; padding: 20px; background-color: #FFE5E5; border-radius: 10px;">
-    <h2 style="color: darkred; text-align: center;">OBJETIVOS</h2>
-    <ul>
-      <li>
-        50000€: Jugadores exclusivos
-        <p>Puedes conseguir jugadores exclusivos si los derrotas en una pachanga y pones una contraseña.</p>
-      </li>
-      <li>
-        60000€: Dark team
-        <p>Introduciríamos al post game de este juego la capacidad de enfrentaros al dark team de Destra.</p>
-      </li>
-      <li>
-        70000€: Sky team
-        <p>Introduciríamos al post game de este juego la capacidad de enfrentaros al sky team de Sael.</p>
-      </li>
-      <li>
-        80000€: Ángel del caos
-        <p>Se podría jugar contra el equipo "ángel del rey team y el dark team liderado por Destra y Sael.</p>
-      </li>
-      <li>
-        90000€: Cadena de partidos
-        <p>Podrías hablar con el señor Raimon en el post game y enfrentaros a poderosos equipos para poder entrenar.</p>
-      </li>
-      <li>
-        100000€: Jugador profesional
-        <p>El jugador Nakata famoso en el mundo del fútbol se introduciría en el juego y sería fichable para todos cadena de partidos.</p>
-      </li>
-      <li>
-        110000€: Jugador para poder entrenar
-        <p>Podrías hablar con Julia Blaze en el post game y enfrentaros a poderosos equipos para poder entrenar.</p>
-      </li>
-      <li>
-        120000€: Lancer
-        <p>El capitán del equipo del ogro se podría fichar para que te acompañe en tu aventura.</p>
-      </li>
-      <li>
-        125000€: Tienda exclusiva
-        <p>Se desbloqueará una tienda con artículos muy valiosos detrás del instituto Raimon.</p>
-      </li>
-      <li>
-        150000€: Jugador por los fans
-        <p>Se haría un concurso donde los fans enviaréis un diseño y se votaría cual os gusta más, para después introducirlo en el juego.</p>
-      </li>
-    </ul>
-  </div>
+        <h2>Métodos de pago</h2>
+        <ul>
+          <li>Tarjeta de crédito</li>
+          <li>PayPal</li>
+          <li>Transferencia bancaria</li>
+        </ul>
 
-    <div class="rewards-box" style="flex: 1 1 250px; border: 2px dashed orange; padding: 20px; background-color: #FFFBEA; border-radius: 10px;">
-    <h2 style="color: goldenrod;text-align: center;">RECOMPENSAS</h2>
-    <ul>
-      <li>10€: Fan: Apoyar el juego</li>
-      <li>40€: Hincha: Copia del juego (cuando salga)</li>
-      <li>60€: Socio: Copia del juego, acceso a la beta cerrada, salir en los créditos y un póster</li>
-      <li>80€: Canterano: Todo lo del "Socio" y una camiseta edición limitada</li>
-      <li>80€: Veterano: Todo lo del "Socio" y el artbook del juego</li>
-      <li>80€: Jugador Revelación: Todo lo del "Socio" y un vinilo del OST</li>
-      <li>80€: Gran Promesa: El "Canterano", el "Veterano" y el "Jugador Revelación" combinados</li>
-      <li>130€: Jugador Estrella: El "Gran Promesa" pero con el vinilo firmado por el compositor (Yasunori Mitsuda)</li>
-      <li>200€: Pichichi: Jugador reclutable con tu nombre (o el nombre que elijas)</li>
-      <li>600€: Capitán: El "Pichichi" pero puedes elegir también la posición en la que juega y una supertécnica característica (dentro de unas a elegir)</li>
-      <li>800€: Balón de Oro: El "Capitán" pero puedes ayudar a diseñar el personaje tú mismo, junto con el equipo de desarrollo</li>
-      <li>1250€: Balón de Oro: El "Capitán" pero puedes ayudar a diseñar el personaje tú mismo, junto con el equipo de desarrollo</li>
-    </ul>
-  </div>
+        <h2>Guía para contribuir</h2>
+        <p>
+          Para contribuir, selecciona una de las recompensas listadas a continuación. Cada nivel de contribución desbloquea diferentes beneficios y ayuda a alcanzar los objetivos de financiación.
+        </p>
+      </div>
 
-</section>
+      <div class="objectives-box">
+        <h2>OBJETIVOS DE FINANCIACIÓN</h2>
+        <p class="sr-only">A continuación se listan los objetivos de financiación y las características que se desbloquearán al alcanzarlos.</p>
+        <ul>
+          <li>
+            <h3>50000€: Jugadores exclusivos</h3>
+            <p>Puedes conseguir jugadores exclusivos si los derrotas en una pachanga y pones una contraseña.</p>
+          </li>
+          <li>
+            <h3>60000€: Dark Team</h3>
+            <p>Introduciríamos al post game de este juego la capacidad de enfrentaros al Dark Team de Destra.</p>
+          </li>
+          <li>
+            <h3>70000€: Sky Team</h3>
+            <p>Introduciríamos al post game de este juego la capacidad de enfrentaros al Sky Team de Sael.</p>
+          </li>
+          <li>
+            <h3>80000€: Ángel del Caos</h3>
+            <p>Se podría jugar contra el equipo "Ángel del Rey Team" y el Dark Team liderado por Destra y Sael.</p>
+          </li>
+          <li>
+            <h3>90000€: Cadena de partidos</h3>
+            <p>Podrías hablar con el señor Raimon en el post game y enfrentaros a poderosos equipos para poder entrenar.</p>
+          </li>
+          <li>
+            <h3>100000€: Jugador profesional</h3>
+            <p>El jugador Nakata, famoso en el mundo del fútbol, se introduciría en el juego y sería fichable para todos los que completen la cadena de partidos.</p>
+          </li>
+          <li>
+            <h3>110000€: Julia Blaze como entrenadora</h3>
+            <p>Podrías hablar con Julia Blaze en el post game y enfrentaros a poderosos equipos para poder entrenar con ella.</p>
+          </li>
+          <li>
+            <h3>120000€: Lancer</h3>
+            <p>El capitán del equipo del Ogro se podría fichar para que te acompañe en tu aventura.</p>
+          </li>
+          <li>
+            <h3>125000€: Tienda exclusiva</h3>
+            <p>Se desbloqueará una tienda con artículos muy valiosos detrás del instituto Raimon.</p>
+          </li>
+          <li>
+            <h3>150000€: Jugador por los fans</h3>
+            <p>Se haría un concurso donde los fans enviaréis un diseño y se votaría cuál os gusta más, para después introducirlo en el juego.</p>
+          </li>
+        </ul>
+      </div>
 
+      <div class="rewards-box">
+        <h2>RECOMPENSAS POR CONTRIBUCIÓN</h2>
+        <p class="sr-only">A continuación se listan los diferentes niveles de recompensa disponibles para los colaboradores de la campaña.</p>
+        <ul>
+          <li><strong>10€: Fan:</strong> Apoyar el juego</li>
+          <li><strong>40€: Hincha:</strong> Copia digital del juego (cuando salga)</li>
+          <li><strong>60€: Socio:</strong> Copia digital del juego, acceso a la beta cerrada, salir en los créditos y un póster digital</li>
+          <li><strong>80€: Canterano:</strong> Todo lo del "Socio" y una camiseta edición limitada</li>
+          <li><strong>80€: Veterano:</strong> Todo lo del "Socio" y el artbook digital del juego</li>
+          <li><strong>80€: Jugador Revelación:</strong> Todo lo del "Socio" y un vinilo del OST</li>
+          <li><strong>80€: Gran Promesa:</strong> El "Canterano", el "Veterano" y el "Jugador Revelación" combinados</li>
+          <li><strong>130€: Jugador Estrella:</strong> El "Gran Promesa" pero con el vinilo firmado por el compositor (Yasunori Mitsuda)</li>
+          <li><strong>200€: Pichichi:</strong> Jugador reclutable con tu nombre (o el nombre que elijas)</li>
+          <li><strong>600€: Capitán:</strong> El "Pichichi" pero puedes elegir también la posición en la que juega y una supertécnica característica (dentro de unas a elegir)</li>
+          <li><strong>800€: Balón de Oro:</strong> El "Capitán" pero puedes ayudar a diseñar el personaje tú mismo, junto con el equipo de desarrollo</li>
+          <li><strong>1250€: Balón de Oro Legendario:</strong> El "Capitán" pero puedes ayudar a diseñar el personaje tú mismo, junto con el equipo de desarrollo, y un agradecimiento especial en el juego.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-
-<footer>
-    Proyecto educativo de Hypernova Games &copy; 2025
+  <footer role="contentinfo">
+    <p>Proyecto educativo de Hypernova Games © 2025</p>
   </footer>
 
   <script>
@@ -430,13 +489,56 @@
 
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabSections.forEach(sec => sec.classList.remove('active'));
+        // Desactivar todos los botones y secciones
+        tabButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+          btn.setAttribute('tabindex', '-1'); // Quita el foco de los botones inactivos
+        });
+        tabSections.forEach(sec => {
+          sec.classList.remove('active');
+          sec.setAttribute('hidden', 'true'); // Oculta la sección de lectores de pantalla
+          sec.setAttribute('tabindex', '-1'); // Quita el foco de las secciones ocultas
+        });
+
+        // Activar el botón y la sección correspondiente
         button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        button.setAttribute('tabindex', '0'); // Permite que el botón activo reciba foco
         const tabId = button.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
+        const activeSection = document.getElementById(tabId);
+        activeSection.classList.add('active');
+        activeSection.removeAttribute('hidden'); // Muestra la sección a lectores de pantalla
+        activeSection.setAttribute('tabindex', '0'); // Permite que la sección activa reciba foco si es necesario
+        activeSection.focus(); // Mueve el foco a la sección activa
+      });
+
+      // Manejo de teclado para los botones de las pestañas
+      button.addEventListener('keydown', (e) => {
+        let index = Array.from(tabButtons).indexOf(e.target);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          index = (index + 1) % tabButtons.length;
+          tabButtons[index].focus();
+          tabButtons[index].click(); // Simula el click para cambiar la pestaña
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          index = (index - 1 + tabButtons.length) % tabButtons.length;
+          tabButtons[index].focus();
+          tabButtons[index].click(); // Simula el click para cambiar la pestaña
+        } else if (e.key === 'Home') {
+          tabButtons[0].focus();
+          tabButtons[0].click();
+        } else if (e.key === 'End') {
+          tabButtons[tabButtons.length - 1].focus();
+          tabButtons[tabButtons.length - 1].click();
+        }
       });
     });
+
+    // Añadir una clase para ocultar visualmente pero no a lectores de pantalla
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = ".sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }";
+    document.head.appendChild(styleSheet);
   </script>
 
 </body>
