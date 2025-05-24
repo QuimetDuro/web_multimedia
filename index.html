@@ -1,74 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Inazuma</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PáginaInazuma</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+        }
+
+        .hero .video {
+            flex: 2;
+            min-width: 300px;
+            height: 400px;
+            background-color: #ccc;
+            margin-right: 20px;
+        }
+
+        .hero .summary {
+            flex: 1;
+            min-width: 250px;
+            height: 400px;
+            background-color: #ddd;
+        }
+
+        nav.tabs {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        nav.tabs button {
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        nav.tabs button.active {
+            border-bottom: 3px solid #333;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .tab-section {
+            display: none;
+            height: 400px;
+            margin-bottom: 40px;
+            background-color: #eee;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- BARRA DE PESTAÑAS -->
-  <header>
+    <header>
+        <div class="logo">[Logo]</div>
+    </header>
+
+    <section class="hero">
+        <div class="video">[Video Placeholder]</div>
+        <div class="summary">[Resumen Placeholder]</div>
+    </section>
+
     <nav class="tabs">
-      <button class="tab-btn active" data-tab="historia">Historia</button>
-      <button class="tab-btn" data-tab="descripcion">Descripción</button>
-      <button class="tab-btn" data-tab="gameplay">Gameplay</button>
-      <button class="tab-btn" data-tab="caracteristicas">Características</button>
-      <button class="tab-btn" data-tab="personajes">Personajes</button>
-      <button class="tab-btn" data-tab="arte">Arte del juego</button>
-      <button class="tab-btn" data-tab="musica">Música</button>
-      <button class="tab-btn" data-tab="equipo">Equipo</button>
+        <button class="tab-btn active" data-tab="historia">Historia</button>
+        <button class="tab-btn" data-tab="descripcion">Descripción</button>
+        <button class="tab-btn" data-tab="gameplay">Gameplay</button>
+        <button class="tab-btn" data-tab="caracteristicas">Características</button>
+        <button class="tab-btn" data-tab="personajes">Personajes</button>
+        <button class="tab-btn" data-tab="arte">Arte del juego</button>
+        <button class="tab-btn" data-tab="musica">Música</button>
+        <button class="tab-btn" data-tab="equipo">Equipo</button>
+        
     </nav>
-  </header>
 
-  <!-- TÍTULO PRINCIPAL + IMAGEN PRINCIPAL + DESCRIPCIÓN + AUTORES -->
-  <section class="hero">
-    <div class="main-title">
-      <h1>Inazuma Eleven 3</h1>
-    </div>
-    <div class="main-section">
-      <div class="main-image">
-        <img src="imagenes/imagen_principal.png" alt="Imagen principal del juego">
-        <div class="plataformas">Disponible en: Steam, Nintendo Switch</div>
-      </div>
-      <div class="descripcion-autores">
-        <div class="descripcion">
-          <p>Resumen del juego y lo que representa en esta entrega.</p>
-        </div>
-        <div class="autores">
-          <p>Desarrollado por Hypernova Games en colaboración con Level-5.</p>
-        </div>
-      </div>
-    </div>
-    <div class="disclaimer">*No es un producto oficial. Proyecto hecho con fines educativos.</div>
-  </section>
-
-  <!-- INFORMACIÓN ADICIONAL -->
-  <section class="info-adicional">
-    <div>
-      <h2>Descripción de la campaña</h2>
-      <ul>
-        <li>Métodos de pago</li>
-        <li>Guía para contribuir</li>
-      </ul>
-    </div>
-    <div class="recompensas">
-      <h2>Recompensas</h2>
-      <p>Información sobre las recompensas del proyecto.</p>
-    </div>
-  </section>
-
-  <!-- OBJETIVOS DEL PROYECTO -->
-  <section class="objetivos">
-    <h2>Objetivos</h2>
-    <p>Objetivos principales de desarrollo y alcance del proyecto.</p>
-  </section>
-
-  <!-- CONTENIDO DE PESTAÑAS -->
-  <section class="tab-content">
-    <div class="tab-section active" id="historia">
-      <h1>
+    <section class="content">
+        <div class="tab-section active" id="historia">
+            <h1>
                 Historia
             </h1>
             <p>
@@ -84,9 +128,9 @@
                 donde jugarán contra selecciones de todo el mundo como Inglaterra, Italia, Argentina entre otras.
             </p>
            
-    </div>
-    <div class="tab-section" id="descripcion">
-      <h1>
+        </div>
+        <div class="tab-section" id="descripcion">
+            <h1>
                 Descripción
             </h1>
             <p>
@@ -97,9 +141,9 @@
                 Level-5 y Akihiro Hino regresan para traernos la continuación de las aventuras de Mark Evans y sus compañeros 
                 de equipo, que se preparan para jugar al fútbol contra equipos de todo el mundo representando a la selección japonesa.
             </p>
-    </div>
-    <div class="tab-section" id="gameplay">
-      <h1>
+        </div>
+        <div class="tab-section" id="gameplay">[Gameplay]
+            <h1>
                 Gameplay
             </h1>
             <p>
@@ -111,9 +155,9 @@
                 Supera las distintas fases del torneo y álzate con el título de campeón guiando a tus jugadores hacia la victoria.
                 ¡Entrena, descubre nuevas supertécnicas y sigue adelante!
             </p>
-    </div>
-    <div class="tab-section" id="caracteristicas">
-      <h1>
+        </div>
+        <div class="tab-section" id="caracteristicas">
+            <h1>
                 Características
             </h1>
             <p>
@@ -136,9 +180,9 @@
                 deberás elegir que supertécnica usar acorde a la situación. Presentamos también las Supertácticas, jugadas especiales 
                 que realiza todo el equipo junto y pueden tener varios propósitos: defender o atacar.
             </p>
-    </div>
-    <div class="tab-section" id="personajes">
-      <h1>
+        </div>
+        <div class="tab-section" id="personajes">
+            <h1>
                 Personajes
             </h1>
             <p>
@@ -155,9 +199,9 @@
                 En este juego podemos encontrar también a jugadores de las anteriores entregas y serán fichables también después de terminar 
                 la historia mediante las máquinas antes mencionadas.
             </p>
-    </div>
-    <div class="tab-section" id="arte">
-      <h1>
+        </div>
+        <div class="tab-section" id="arte">
+            <h1>
                 Arte del juego
             </h1>
             <p>
@@ -173,9 +217,9 @@
                 que está siendo partícipe de cada jugada y de cada golpe. La expresividad en las caras, los efectos visuales, sumados a los 
                 fondos elaborados, crean una experiencia placentera a la vez que frenética que se queda grabada en la mente durante cada partido.
             </p>
-    </div>
-    <div class="tab-section" id="musica">
-      <h1>
+        </div>
+        <div class="tab-section" id="musica">
+            <h1>
                 Música
             </h1>
             <p>
@@ -187,9 +231,9 @@
                 Estamos muy agradecidos de volver a trabajar con la persona que compuso la banda sonora de los anteriores juegos de 
                 Inazuma Eleven.
             </p>
-    </div>
-    <div class="tab-section" id="equipo">
-      <h1>
+        </div>
+        <div class="tab-section" id="equipo">
+            <h1>
                 Equipo
             </h1>
             <p>
@@ -210,27 +254,30 @@
                 Esta misma empresa es famosa por desarrollar juegos como la propia saga de inazuma eleven adems de otras fabulosas sagas como 
                 yo-kai Watch, el profesor Layton...
             </p>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Hypernova Games. Proyecto educativo sin fines comerciales.</p>
-  </footer>
+    <footer>
+        [Pie de página]
+    </footer>
 
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabSections = document.querySelectorAll('.tab-section');
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabSections = document.querySelectorAll('.tab-section');
 
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabSections.forEach(sec => sec.classList.remove('active'));
-        button.classList.add('active');
-        const tabId = button.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
-  </script>
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Quitar clases activas
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabSections.forEach(sec => sec.classList.remove('active'));
+
+                // Activar botón y sección correspondiente
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
